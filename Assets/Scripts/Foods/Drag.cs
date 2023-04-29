@@ -24,6 +24,7 @@ public class Drag : MonoBehaviour
         //rigidBody.position = Vector3.MoveTowards(rigidBody.position, _cam.ScreenToWorldPoint(Input.mousePosition) - difference, _speed * Time.deltaTime);
         rigidBody.velocity = (_cam.ScreenToWorldPoint(Input.mousePosition) - (Vector3)rigidBody.position - offset) * _speed;
         float magnitude = rigidBody.velocity.magnitude;
+        if (magnitude == 0) return;
         rigidBody.velocity = rigidBody.velocity * Mathf.Min(magnitude, maxSpeed) / magnitude;
         
 
