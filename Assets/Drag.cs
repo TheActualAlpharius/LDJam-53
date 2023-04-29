@@ -8,9 +8,9 @@ public class Drag : MonoBehaviour
     private Vector3 difference = Vector3.zero;
     private Vector3 lastPosition = Vector3.zero;
     private Camera _cam;
-    private Vector3 trailingDir = Vector3.zero;
-    [SerializeField] private float _speed = 50;
-    [SerializeField] private float friction = 0.01f;
+    private Vector3 trailingDir = Vector3.zero; //direction obj is travelling OnMouseUp
+    [SerializeField] private float _speed = 50; //speed at which obj follows mouse
+    [SerializeField] private float friction = 0.01f; //how much sliding happens when mouse is released
 
     private void Awake(){
         _cam = Camera.main;
