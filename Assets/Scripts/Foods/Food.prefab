@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 3621310361625489405}
   - component: {fileID: 3621310361625489402}
   - component: {fileID: 6434323441783601882}
+  - component: {fileID: 6124826693688056227}
   m_Layer: 0
   m_Name: Food
   m_TagString: Untagged
@@ -207,3 +208,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolID: Food
+--- !u!114 &6124826693688056227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3621310361625489393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de5e7a674c62914997c15601baf371e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  digestionTime: 300
+  childPrefabs:
+  - {fileID: 158850401245806738, guid: c298dc04026c5844a99ab1566cd3272c, type: 3}
+  - {fileID: 158850401245806738, guid: c298dc04026c5844a99ab1566cd3272c, type: 3}
+  isDigesting: 0
