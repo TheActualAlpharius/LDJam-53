@@ -9,11 +9,10 @@ public class Barrier : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other){
-        Debug.Log("test");
         otherRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
 
         otherRigidbody.velocity = new Vector3(0, 20, 0);
-        ObjectPool.ReleaseToPool(other.gameObject);
+
     }
 
 }
