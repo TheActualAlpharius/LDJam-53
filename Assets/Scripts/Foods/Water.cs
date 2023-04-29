@@ -20,7 +20,8 @@ public class Water : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(){
+    private void OnTriggerExit2D(Collider2D other){
+        otherRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
         otherRigidbody.drag = ogDrag;
     }
 
