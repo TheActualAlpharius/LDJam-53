@@ -26,9 +26,8 @@ public class Drag : MonoBehaviour
         float magnitude = rigidBody.velocity.magnitude;
         if (magnitude == 0) return;
         rigidBody.velocity = rigidBody.velocity * Mathf.Min(magnitude, maxSpeed) / magnitude;
-        
-
     }
+
 
 
 }
