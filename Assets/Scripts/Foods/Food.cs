@@ -7,7 +7,7 @@ public class Food : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite[] foodSprites;
     [SerializeField] private Sprite[] nonFoodSprites;
-    [SerializeField] public float digestionTime = 60*5f;
+    [SerializeField] public float digestionTime = 5f;
     [SerializeField] private List<GameObject> childPrefabs;
     public bool isDigesting = false;
     public bool notFood;
@@ -25,10 +25,13 @@ public class Food : MonoBehaviour
             spriteRenderer.sprite = nonFoodSprites[randomIndex % foodSprites.Length];
         }
         
+    }
+
     public void Update(){
         if(isDigesting){
             digestionTime -= Time.deltaTime;
             if(digestionTime <= 0){
+                Debug.Log("Digesting");
                 foreach (var childPrefab in childPrefabs){
                     GameObject child = ObjectPool.GetObject(childPrefab);
                     child.transform.position = gameObject.transform.position;
@@ -37,12 +40,6 @@ public class Food : MonoBehaviour
             }
         }
     }
-
-    }
-
-}
-
-
 
 
 }

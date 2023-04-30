@@ -12,7 +12,12 @@ public class Water : MonoBehaviour
 
         FloatOnWater floatOnWater = other.gameObject.GetComponent<FloatOnWater>();
         otherRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
-
+        Food foodItem = other.gameObject.GetComponent<Food>();
+        Debug.Log(foodItem != null);
+        if(foodItem != null){
+            foodItem.isDigesting = true;
+        }
+            
         if (floatOnWater != null){
             ogDrag = otherRigidbody.drag;
             otherRigidbody.drag = waterDrag;
@@ -23,6 +28,11 @@ public class Water : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other){
         otherRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
         otherRigidbody.drag = ogDrag;
+
+        Food foodItem = other.gameObject.GetComponent<Food>();
+        if(foodItem != null){
+            foodItem.isDigesting = false;
+        }
     }
 
 }
