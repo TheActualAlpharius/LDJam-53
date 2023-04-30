@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class FloatOnWater : MonoBehaviour
 {
-
-    private void OnTriggerStay2D(Collider2D other){
-        Debug.Log("collide!!");
-
-
+    private void OnEnable(){
+        transform.position = new Vector3(7.5f, 38f);
     }
 }
