@@ -7,7 +7,7 @@ public class Poop : MonoBehaviour {
     [SerializeField] private List<GameObject> childPrefabs;
     [SerializeField] public float health;
 
-    public void emmitNutirent(){
+    public void emitNutirent(){
         
         GameObject child = ObjectPool.GetObject(childPrefabs[0]);
         childPrefabs.RemoveAt(0);
