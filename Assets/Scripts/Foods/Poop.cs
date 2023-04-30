@@ -8,9 +8,11 @@ public class Poop : MonoBehaviour {
     [SerializeField] public float health;
 
     public void emmitNutirent(){
-
-        GameObject child = ObjectPool.GetObject(childPrefabs.RemoveAt(0));
-        child.Nutrient.health = health;
+        
+        GameObject child = ObjectPool.GetObject(childPrefabs[0]);
+        childPrefabs.RemoveAt(0);
+        Nutrient nut = child.GetComponent<Nutrient>();
+        nut.isGood = Random.value > health;
         if(childPrefabs.Count == 0){
             ObjectPool.ReleaseToPool(gameObject);
         }
