@@ -49,6 +49,7 @@ public class Food : MonoBehaviour
                     GameObject child = ObjectPool.GetObject(childPrefab);
                     
                     child.transform.position = gameObject.transform.position;
+                    child.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
                     //set the nutrient info for the poop that is spawned after digestion
                     Poop poop = child.GetComponent<Poop>();
                     poop.goodNutrientChance = goodNutrientChance;
