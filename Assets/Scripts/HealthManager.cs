@@ -20,7 +20,7 @@ public class HealthManager : Singleton<HealthManager>
 
     public static void ChangeHealth(float _diff)
     {
-        instance.health = Mathf.Max(0f, instance.health + _diff);
+        instance.health = Mathf.Clamp(instance.health + _diff, 0f, instance.maxHealth);
         if (instance.health <= 0f)
         {
             GameModeManager.SetMode("ScoreMode");
