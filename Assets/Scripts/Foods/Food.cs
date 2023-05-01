@@ -42,6 +42,7 @@ public class Food : MonoBehaviour
 
     public void Update(){
         if(isDigesting){
+            Debug.Log(digestionTime);
             digestionTime -= Time.deltaTime;
             if(digestionTime <= 0){
                 Debug.Log("Digesting");
@@ -57,7 +58,7 @@ public class Food : MonoBehaviour
                 ObjectPool.ReleaseToPool(gameObject);
             }
         }
-        if (hasEnteredStomach == true & transform.position.y > 15){
+        if (hasEnteredStomach == true & transform.position.y > 35){
             ObjectPool.ReleaseToPool(gameObject);
             //add or subtract score depending on whether good or bad food
         }
