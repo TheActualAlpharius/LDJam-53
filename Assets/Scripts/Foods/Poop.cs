@@ -33,7 +33,6 @@ public class Poop : MonoBehaviour {
         for(int i = 1; i <= numOfNutrients; i++){
             birthPoints.Add(totalDistance*i/numOfNutrients);
         }
-        Debug.Log(totalDistance);
     }
     public void emitNutirent(){
         GameObject child = ObjectPool.GetObject(nutrientPrefab);

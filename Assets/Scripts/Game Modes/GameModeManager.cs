@@ -55,8 +55,6 @@ public class GameModeManager : Singleton<GameModeManager>
         BaseMode newMode = modes[_modeName];
         if (instance.currentMode == null || instance.currentMode.GetType() != newMode.GetType())
         {
-            //Debug.Log("Transitioning to game mode: " + _modeName);
-
             instance.currentMode?.TransitionOut();
             newMode?.TransitionIn();
             instance.currentMode = newMode;
