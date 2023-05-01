@@ -18,6 +18,7 @@ public class GameModeManager : Singleton<GameModeManager>
         modes = new Dictionary<string, BaseMode>();
         modes.Add("MenuMode", new MenuMode());
         modes.Add("MainGameMode", new MainGameMode());
+        modes.Add("ScoreMode", new ScoreMode());
 
         onModeChanged = null;
 

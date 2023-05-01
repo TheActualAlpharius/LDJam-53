@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuMode : BaseMode
+public class ScoreMode : BaseMode
 {
     private CameraMover cameraMover;
 
-    public MenuMode()
+    public ScoreMode()
     {
         cameraMover = GameObject.FindObjectOfType<CameraMover>();
     }

@@ -7,6 +7,10 @@ public class CameraMover : MonoBehaviour
     [SerializeField] List<Vector3> cameraPositions;
     [SerializeField] int startingIndex;
     [SerializeField] float propStepRate;
+    [SerializeField] float floatDir;
+    [SerializeField] float floatSpeed;
+    [SerializeField] float maxFloatY;
+    [SerializeField] float minFloatY;
 
     struct CameraTransitionData
     {
@@ -33,7 +37,6 @@ public class CameraMover : MonoBehaviour
 
         transitionQueue = new List<CameraTransitionData>();
         currentIndex = startingIndex;
-        transform.position = cameraPositions[startingIndex];
     }
 
     // Update is called once per frame
@@ -52,6 +55,17 @@ public class CameraMover : MonoBehaviour
                 transitionQueue.RemoveAt(0);
                 propThrough = 0f;
             }
+        }
+        transform.position = transform.position + new Vector3(0f, floatDir * floatSpeed * Time.deltaTime, 0f);
+        if (transform.position.y > maxFloatY)
+        {
+            transform.position = new Vector3(transform.position.x, maxFloatY, transform.position.z);
+            floatDir *= -1;
+        }
+        else if (transform.position.y < minFloatY)
+        {
+            transform.position = new Vector3(transform.position.x, minFloatY, transform.position.z);
+            floatDir *= -1;
         }
     }
 
@@ -86,6 +100,24 @@ public class CameraMover : MonoBehaviour
 
     public void ResetCamera()
     {
-        MoveTo(cameraPositions[startingIndex]);
+        ChangeCameraIndex(startingIndex - currentIndex);
+    }
+
+    public void StopFloating()
+    {
+        floatDir = 0f;
+    }
+
+    public void StartFloating()
+    {
+        float heightProp = (transform.position.y - minFloatY) / (maxFloatY - minFloatY);
+        if (heightProp < 0.5)
+        {
+            floatDir = 1f;
+        }
+        else
+        {
+            floatDir = -1f;
+        }
     }
 }

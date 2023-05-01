@@ -23,7 +23,7 @@ public class HealthManager : Singleton<HealthManager>
         instance.health = Mathf.Max(0f, instance.health + _diff);
         if (instance.health <= 0f)
         {
-            GameModeManager.SetMode("MenuMode");
+            GameModeManager.SetMode("ScoreMode");
         }
     }
 
