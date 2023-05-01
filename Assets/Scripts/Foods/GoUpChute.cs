@@ -51,7 +51,10 @@ public class GoUpChute : MonoBehaviour
             if (!food.hasEnteredStomach)
             {
                 food.hasEnteredStomach = true;
-            }
+                if (food.transform.position.y > 30){
+                    ObjectPool.ReleaseToPool(other.gameObject);
+                }
+            } 
             else
             {
                 ObjectPool.ReleaseToPool(other.gameObject);
