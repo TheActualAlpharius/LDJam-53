@@ -26,6 +26,7 @@ public class Consumer : MonoBehaviour
                 audioSource.Play();
             }
             HealthManager.ChangeHealth(consumable.healthChange);
+            ScoreManager.ChangeScore(Mathf.RoundToInt(consumable.healthChange));
             ObjectPool.ReleaseToPool(other.gameObject);
         }
     }
