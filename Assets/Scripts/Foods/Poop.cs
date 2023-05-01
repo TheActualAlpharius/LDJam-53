@@ -13,34 +13,33 @@ public class Poop : MonoBehaviour {
 
 
     [SerializeField] private List<GameObject> childPrefabs;
-    private int totalOffspring;
+    [SerializeField] private int numOfNutrients;
     private List<float> birthPoints = new List<float>();
     [SerializeField] public float health;
     private float distanceTraveled = 0;
-    public int numOfNutrients;
     public float goodNutrientChance;
     bool flag = true;
     float totalDistance;
 
     private void OnEnable(){
-        totalOffspring = childPrefabs.Count;
+        numOfNutrients = childPrefabs.Count;
         totalDistance = 0;
         for(int i = 0; i < lines.Length; i++){
             totalDistance += Vector3.Distance(lines[i].start, lines[i].end);
         }
-        for(int i = 1; i <= totalOffspring; i++){
-            birthPoints.Add(totalDistance*i/totalOffspring);
+        for(int i = 1; i <= numOfNutrients; i++){
+            Debug.Log("Added birth point");
+            birthPoints.Add(totalDistance*i/numOfNutrients);
         }
     }
     public void emitNutirent(){
-        
-        GameObject child = ObjectPool.GetObject(childPrefabs[0]);
-        childPrefabs.RemoveAt(0);
+        Debug.Log("IM GONNA SPAAAAWWWWWWNNNNNNN!");
+        GameObject child = ObjectPool.GetObject(Nutrient);
         birthPoints.RemoveAt(0);
         Nutrient nut = child.GetComponent<Nutrient>();
         nut.isGood = Random.value > health;
         nut.transform.position = new Vector3(-7.6f,-16.13f,0);
-        if(childPrefabs.Count == 0){
+        if(birthPoints.Count == 0){
             ObjectPool.ReleaseToPool(gameObject);
         }
         
