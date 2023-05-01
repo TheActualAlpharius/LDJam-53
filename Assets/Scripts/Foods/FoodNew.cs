@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class FoodNew : MonoBehaviour
 {
+    private SpriteRenderer[] spriteRenderers;
+    private Collider2D[] colliders;
     // Start is called before the first frame update
-    void Start()
-    {
+    private void Start(){
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         
-    }
+        colliders = GetComponentsInChildren<Collider2D>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log(spriteRenderers.Length);
+        Debug.Log(colliders.Length);
+
     }
 }

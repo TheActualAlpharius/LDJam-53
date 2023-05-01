@@ -27,7 +27,7 @@ public class Food : MonoBehaviour
     private void OnEnable(){
         transform.position = new Vector3(7.5f, 38f);
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        Debug.Log(spriteRenderer.sprite);
+        CircleCollider2D collider = GetComponent<CircleCollider2D>();
         int randomIndex = Random.Range(0, foodSprites.Length);
         spriteRenderer.sprite = foodSprites[randomIndex];
         numOfNutrients = (int)nutrientInfo[spriteRenderer.sprite.name][0];
@@ -35,14 +35,32 @@ public class Food : MonoBehaviour
         isDigesting = false;
         hasEnteredStomach = false;
         digestionTime = DIGESTION_TIME;
-
-
-
+        switch (spriteRenderer.sprite.name){
+            case "burger":
+                collider.radius = 0.95f;
+                break;
+            case "banana":
+                collider.radius = 1f;
+                break;
+            case "pizza":
+                collider.radius = 0.9f;
+                break;
+            case "cigar":
+                collider.radius = 1f;
+                break;
+            case "boot":
+                collider.radius = 0.9f;
+                break;
+            case "basketball":
+                collider.radius = 1.05f;
+                break;
+            default:
+                break;
+        }
     }
 
     public void Update(){
         if(isDigesting){
-            Debug.Log(digestionTime);
             digestionTime -= Time.deltaTime;
             if(digestionTime <= 0){
                 Debug.Log("Digesting");
