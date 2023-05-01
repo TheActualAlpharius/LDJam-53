@@ -66,7 +66,13 @@ MonoBehaviour:
   childPrefabs:
   - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
   - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
+  - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
+  - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
+  - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
+  - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
   health: 0
+  numOfNutrients: 0
+  goodNutrientChance: 0
 --- !u!50 &6474061482140941829
 Rigidbody2D:
   serializedVersion: 4
