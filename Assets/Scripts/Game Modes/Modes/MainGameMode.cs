@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainGameMode : BaseMode
 {
     private static float healthLossRate = 0.1f;
+    private float startTime;
 
     private CameraMover cameraMover;
 
@@ -15,9 +16,12 @@ public class MainGameMode : BaseMode
 
     public override void TransitionIn()
     {
+        startTime = Time.time;
+
         cameraMover.ResetCamera();
 
         HealthManager.ResetHealth();
+        ScoreManager.ResetScore();
     }
 
     public override void TransitionOut()
@@ -29,6 +33,7 @@ public class MainGameMode : BaseMode
     {
         // Drain health
         HealthManager.ChangeHealth(-healthLossRate * Time.deltaTime);
+        ScoreManager.SetScore(Mathf.FloorToInt(Time.time - startTime));
     }
 
     public override void FixedUpdate()
