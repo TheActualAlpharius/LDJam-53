@@ -37,6 +37,7 @@ public class Nutrient : MonoBehaviour {
                 }
                 
                 child.transform.position = gameObject.transform.position;
+                child.transform.rotation = gameObject.transform.rotation;
                 ObjectPool.ReleaseToPool(gameObject);
             }
         }
