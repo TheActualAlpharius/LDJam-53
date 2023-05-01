@@ -18,7 +18,7 @@ public class Food : MonoBehaviour
 
     private Dictionary<string, float[]> nutrientInfo = new Dictionary<string, float[]>(){
         {"burger", new float[] {4f, 0.8f, 3f}},
-        {"banana", new float[] {6f, 0.5f, 2f}},
+        {"banana", new float[] {6f, 0.6f, 2f}},
         {"pizza", new float[] {4f, 0.7f, 4f}},
         {"boot", new float[] {3f, 0.03f, 2f}},
         {"cigar", new float[] {5f, 0.01f, 1f}},
