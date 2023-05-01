@@ -31,7 +31,6 @@ public class Poop : MonoBehaviour {
             totalDistance += Vector3.Distance(lines[i].start, lines[i].end);
         }
         for(int i = 1; i <= numOfNutrients; i++){
-            Debug.Log("Added birth point");
             birthPoints.Add(totalDistance*i/numOfNutrients);
         }
         Debug.Log(totalDistance);
@@ -54,7 +53,6 @@ public class Poop : MonoBehaviour {
             //add or subtract score depending on whether good or bad food
         }
         float distanceTravelled = percentTravelled();
-        Debug.Log(distanceTravelled);
         renderer.color = Color.Lerp(startColor, endColor, distanceTravelled);
         if(distanceTraveled > birthPoints[0]){
             emitNutirent();
