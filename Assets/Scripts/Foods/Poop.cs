@@ -39,7 +39,7 @@ public class Poop : MonoBehaviour {
         birthPoints.RemoveAt(0);
         Nutrient nut = child.GetComponent<Nutrient>();
         nut.isGood = Random.value > goodNutrientChance;
-        nut.transform.position = new Vector3(-7.8f,-18.3f,0);
+        nut.transform.position = new Vector3(-7.8f,-18.3f,0) + new Vector3(Random.Range(0.1f, 0.3f), Random.Range(0.1f, 0.3f), 0);
         if(birthPoints.Count == 0){
             ObjectPool.ReleaseToPool(gameObject);
         }
