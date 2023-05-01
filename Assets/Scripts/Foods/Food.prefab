@@ -229,8 +229,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a5af35c17cb247642ab74808642d4cbc, type: 3}
   - {fileID: 21300000, guid: 6b86f084ed5250e478ff2a19f3dbfdb3, type: 3}
   digestionTime: 3
-  childPrefabs:
-  - {fileID: 158850401245806738, guid: c298dc04026c5844a99ab1566cd3272c, type: 3}
+  childPrefab: {fileID: 158850401245806738, guid: c298dc04026c5844a99ab1566cd3272c, type: 3}
   isDigesting: 0
   notFood: 0
   hasEnteredStomach: 0
