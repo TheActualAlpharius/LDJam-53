@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoUpChute : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public AudioSource audioSourceVomit;
     // Update is called once per frame
     void Update()
     {
@@ -16,6 +16,7 @@ public class GoUpChute : MonoBehaviour
         Food food = other.gameObject.GetComponent<Food>();
         if (food != null){
             if (food.hasEnteredStomach){
+                audioSourceVomit.Play();
                 //shoot the food up
                 otherRigidbody.velocity = new Vector3(otherRigidbody.velocity.x, 30f);
                 //otherRigidbody.AddForce(new Vector3(0, 30f));

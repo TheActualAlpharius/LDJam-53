@@ -5,9 +5,9 @@ using UnityEngine;
 public class Consumer : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    private AudioSource audioSource;
+    private void Start(){
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,7 +21,10 @@ public class Consumer : MonoBehaviour
         Consumable consumable = other.gameObject.GetComponent<Consumable>();
 
         if (consumable)
-        {
+        {   
+            if(consumable.healthChange < 0){
+                audioSource.Play();
+            }
             HealthManager.ChangeHealth(consumable.healthChange);
             ObjectPool.ReleaseToPool(other.gameObject);
         }
