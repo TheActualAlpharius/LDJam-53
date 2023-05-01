@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Analysis : MonoBehaviour {
 
-
     private void OnTriggerEnter2D(Collider2D other){
         Nutrient nutrient = other.gameObject.GetComponent<Nutrient>();
         if (nutrient != null)
@@ -28,6 +27,12 @@ public class Analysis : MonoBehaviour {
         {
             return;
         }
-        collision.attachedRigidbody.velocity = new Vector2(0f, 0f);
+        Nutrient nutrient = collision.gameObject.GetComponent<Nutrient>();
+        if (nutrient)
+        {
+            collision.attachedRigidbody.velocity = new Vector2(0f, 0f);
+            collision.attachedRigidbody.AddForce(-Physics2D.gravity * collision.attachedRigidbody.mass); // negate gravity
+            collision.attachedRigidbody.angularVelocity = 0f;
+        }
     }
 }

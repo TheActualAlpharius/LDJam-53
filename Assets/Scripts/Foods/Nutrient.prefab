@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGood: 0
-  analysisTime: 3
+  analysisTimeMax: 3
   badPrefab: {fileID: 4422411532811009396, guid: f306774af8457754e9af2d35b9d06f63, type: 3}
   goodPrefab: {fileID: 4422411532811009396, guid: 22e7e3497eba164458d36445a18cc5ef, type: 3}
   healthChangeSize: 1

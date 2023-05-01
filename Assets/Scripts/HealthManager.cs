@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class HealthManager : Singleton<HealthManager>
 {
-    [SerializeField] float startingHealth;
+    [SerializeField] float maxHealth;
 
     private float health;
 
     public override void InitSingleton()
     {
-        health = startingHealth;
+        health = maxHealth;
     }
 
     public static void SetHealth(float _health)
@@ -25,11 +25,16 @@ public class HealthManager : Singleton<HealthManager>
 
     public static void ResetHealth()
     {
-        instance.health = instance.startingHealth;
+        instance.health = instance.maxHealth;
     }
 
     public static float GetHealth()
     {
         return instance.health;
+    }
+
+    public static float GetMaxHealth()
+    {
+        return instance.maxHealth;
     }
 }
