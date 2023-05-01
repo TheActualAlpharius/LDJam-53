@@ -16,7 +16,6 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(HealthManager.GetHealth().ToString());
         healthText.text = "Health: " + HealthManager.GetHealth().ToString();
     }
 }
