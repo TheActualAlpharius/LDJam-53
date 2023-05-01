@@ -6,7 +6,7 @@ public class Food : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite[] foodSprites;
-    [SerializeField] private static float DIGESTION_TIME = 2f;
+    [SerializeField] private static float DIGESTION_TIME = 4f;
     [SerializeField] public float digestionTime;
     [SerializeField] private GameObject childPrefab;
     public bool isDigesting = false;

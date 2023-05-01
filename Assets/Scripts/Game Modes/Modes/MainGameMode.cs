@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MainGameMode : BaseMode
 {
-    private static float healthLossRate = 0.07f;
+    private static float minHealthLossRate = 0.07f;
+    private static float maxHealthLossRate = 0.14f;
+    private static float timeToMaxHealthLossRate = 120f;
     private float startTime;
 
     private CameraMover cameraMover;
@@ -34,12 +36,19 @@ public class MainGameMode : BaseMode
     public override void Update()
     {
         // Drain health
-        HealthManager.ChangeHealth(-healthLossRate * Time.deltaTime);
+        HealthManager.ChangeHealth(-GetCurrentHealthLossRate() * Time.deltaTime);
         ScoreManager.SetScore(Mathf.FloorToInt(Time.time - startTime));
     }
 
     public override void FixedUpdate()
     {
 
+    }
+
+    float GetCurrentHealthLossRate()
+    {
+        float propThrough = Mathf.Clamp((Time.time - startTime) / timeToMaxHealthLossRate, 0f, 1f);
+
+        return minHealthLossRate + propThrough * (maxHealthLossRate - minHealthLossRate);
     }
 }
