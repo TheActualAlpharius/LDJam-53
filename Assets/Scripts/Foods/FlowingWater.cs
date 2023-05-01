@@ -35,38 +35,28 @@ public class FlowingWater : MonoBehaviour
                 {
                     continue;
                 }
-
-                float propSubmerged = 1f - result.distance / collidedHeight;
+                
+                float propSubmerged = Mathf.Clamp(1f - result.distance / collidedHeight, 0f, 1f);
 
                 collision.attachedRigidbody.AddForce(forceToApply * propSubmerged);
-                if (collision.attachedRigidbody.velocity.magnitude >= maxSpeed)
+                float speed = collision.attachedRigidbody.velocity.magnitude;
+                if (speed >= maxSpeed)
                 {
-                    collision.attachedRigidbody.velocity *= maxSpeed / collision.attachedRigidbody.velocity.magnitude;
+                    collision.attachedRigidbody.velocity *= maxSpeed / speed;
                 }
-            }
-            /* A MUCH WORSE BUT FASTER ALTERNATIVE
-            ColliderDistance2D distanceToSeparate = Physics2D.Distance(GetComponent<Collider2D>(), collision);
 
-            // Either of these would be weird as we've detected a collision, may as well check though.
-            if (!distanceToSeparate.isValid || distanceToSeparate.distance > 0f)
-            {
-                return;
+                /*
+                Vector2 forceDir = forceToApply.normalized;
+                float velocityInForceDir = Vector2.Dot(forceDir, collision.attachedRigidbody.velocity);
+                float speedInForceDir = Mathf.Abs(velocityInForceDir);
+                if (speedInForceDir >= maxSpeed)
+                {
+                    float speedChange = speedInForceDir - maxSpeed;
+                    float velocitySign = velocityInForceDir / speedInForceDir;
+                    collision.attachedRigidbody.velocity -= speedChange * velocitySign * forceDir;
+                }
+                */
             }
-
-            float inclination = Vector2.Dot(distanceToSeparate.normal, new Vector2(0f, 1f));
-
-            float propSubmerged;
-            if (inclination > 0f) // We're closest to the surface of the water
-            {
-                // Get the distance to it
-                float distanceToSurface = -distanceToSeparate.distance * inclination;
-                propSubmerged = Mathf.Min(1f, distanceToSurface / collision.bounds.size.y);
-            }
-            else // We're not closest to the surface, just assume we're fully submerged (we should be unless the water is very thin)
-            {
-                propSubmerged = 1f;
-            }
-            */
         }
     }
 }
