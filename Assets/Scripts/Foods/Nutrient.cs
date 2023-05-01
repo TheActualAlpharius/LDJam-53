@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Nutrient : MonoBehaviour {
     public bool isGood;
-    [SerializeField] public float analysisTime = 3f;
+    [SerializeField] public float analysisTimeMax;
     [SerializeField] private GameObject badPrefab;
     [SerializeField] private GameObject goodPrefab;
     [SerializeField] private float healthChangeSize;
-    public bool isAnalysing = false;
+    private float analysisTime;
+    public bool isAnalysing;
 
-    private void Start()
+    private void OnEnable()
     {
+        isAnalysing = false;
+        analysisTime = 3f;
         float healthChange;
         if (isGood)
         {

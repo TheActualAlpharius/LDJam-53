@@ -39,24 +39,15 @@ public class FlowingWater : MonoBehaviour
                 
                 float propSubmerged = Mathf.Clamp(1f - result.distance / collidedHeight, 0f, 1f);
 
-                collision.attachedRigidbody.AddForce(forceToApply * propSubmerged);
-                float speed = collision.attachedRigidbody.velocity.magnitude;
-                if (speed >= maxSpeed)
+                if (propSubmerged > 0f)
                 {
-                    collision.attachedRigidbody.velocity *= maxSpeed / speed;
+                    collision.attachedRigidbody.AddForce(forceToApply * propSubmerged);
+                    float speed = collision.attachedRigidbody.velocity.magnitude;
+                    if (speed >= maxSpeed)
+                    {
+                        collision.attachedRigidbody.velocity *= maxSpeed / speed;
+                    }
                 }
-
-                /*
-                Vector2 forceDir = forceToApply.normalized;
-                float velocityInForceDir = Vector2.Dot(forceDir, collision.attachedRigidbody.velocity);
-                float speedInForceDir = Mathf.Abs(velocityInForceDir);
-                if (speedInForceDir >= maxSpeed)
-                {
-                    float speedChange = speedInForceDir - maxSpeed;
-                    float velocitySign = velocityInForceDir / speedInForceDir;
-                    collision.attachedRigidbody.velocity -= speedChange * velocitySign * forceDir;
-                }
-                */
             }
         }
     }

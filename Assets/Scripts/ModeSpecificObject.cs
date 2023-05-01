@@ -19,12 +19,6 @@ public class ModeSpecificObject : MonoBehaviour
         GameModeManager.RemoveModeChangeListened(OnModeChanged);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnModeChanged(BaseMode _newMode)
     {
         this.gameObject.SetActive(_newMode.GetType().Name == mode);

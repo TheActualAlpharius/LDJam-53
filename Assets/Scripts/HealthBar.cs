@@ -5,17 +5,21 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private Text healthText;
+    [SerializeField] float maxWidth;
+    [SerializeField] float minWidth;
+
+    private Image healthBarLine;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthText = GetComponent<Text>();
+        healthBarLine = GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = "Health: " + HealthManager.GetHealth().ToString();
+        float newWidth = minWidth + (maxWidth - minWidth) * HealthManager.GetHealth() / HealthManager.GetMaxHealth();
+        healthBarLine.rectTransform.sizeDelta = new Vector2(newWidth, healthBarLine.rectTransform.sizeDelta.y);
     }
 }
