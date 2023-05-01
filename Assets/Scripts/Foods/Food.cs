@@ -25,7 +25,7 @@ public class Food : MonoBehaviour
     };
 
     private void OnEnable(){
-        transform.position = new Vector3(7.5f, 38f);
+        transform.position = new Vector3(7.5f, 42f);
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         Debug.Log(spriteRenderer.sprite);
         int randomIndex = Random.Range(0, foodSprites.Length);
