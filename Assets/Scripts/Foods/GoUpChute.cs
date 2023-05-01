@@ -51,7 +51,14 @@ public class GoUpChute : MonoBehaviour
         Debug.Log("exit");
         Food food = other.gameObject.GetComponent<Food>();
         if (food != null){
-            food.hasEnteredStomach = true;
+            if (!food.hasEnteredStomach)
+            {
+                food.hasEnteredStomach = true;
+            }
+            else
+            {
+                ObjectPool.ReleaseToPool(other.gameObject);
+            }
         }
 
     }

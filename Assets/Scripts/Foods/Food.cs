@@ -59,10 +59,6 @@ public class Food : MonoBehaviour
                 ObjectPool.ReleaseToPool(gameObject);
             }
         }
-        if (hasEnteredStomach == true & transform.position.y > 35){
-            ObjectPool.ReleaseToPool(gameObject);
-            //add or subtract score depending on whether good or bad food
-        }
     }
 
 
