@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainGameMode : BaseMode
 {
-    private static float healthLossRate = 0.1f;
+    private static float healthLossRate = 0.07f;
     private float startTime;
 
     private CameraMover cameraMover;

@@ -30,8 +30,8 @@ public class Poop : MonoBehaviour {
         for(int i = 0; i < lines.Length; i++){
             totalDistance += Vector3.Distance(lines[i].start, lines[i].end);
         }
-        for(int i = 5; i <= numOfNutrients + 5; i++){
-            birthPoints.Add(totalDistance*i/(numOfNutrients+5));
+        for(int i = 5; i <= numOfNutrients + 1; i++){
+            birthPoints.Add(totalDistance*i/(numOfNutrients+1));
         }
     }
     public void emitNutirent(){
