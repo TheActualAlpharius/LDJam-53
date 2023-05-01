@@ -98,7 +98,6 @@ GameObject:
   - component: {fileID: -4207822685875493469}
   - component: {fileID: -8852267684994848858}
   - component: {fileID: -1166165295108446691}
-  - component: {fileID: 4609208508297005559}
   - component: {fileID: 5828116247963869023}
   m_Layer: 0
   m_Name: Nutrient
@@ -188,18 +187,6 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &-1166165295108446691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8601326024802477363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ced059c5746f874e8f1d7050da6509b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4609208508297005559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
