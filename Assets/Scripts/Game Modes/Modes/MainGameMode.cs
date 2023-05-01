@@ -22,11 +22,13 @@ public class MainGameMode : BaseMode
 
         HealthManager.ResetHealth();
         ScoreManager.ResetScore();
+        cameraMover.SetShakeEnabled(true);
     }
 
     public override void TransitionOut()
     {
         HealthManager.SetHealth(0f);
+        cameraMover.SetShakeEnabled(false);
     }
 
     public override void Update()

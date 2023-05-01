@@ -11,7 +11,12 @@ public class CameraMover : MonoBehaviour
     [SerializeField] float floatSpeed;
     [SerializeField] float maxFloatY;
     [SerializeField] float minFloatY;
+    [SerializeField] float shakeStrength;
+    [SerializeField] float maxShakeDistance;
+    [SerializeField] bool shakeEnabled;
     public AudioSource audioSourceClick;
+    private Vector3 lastShakeOffset;
+
     struct CameraTransitionData
     {
         public Vector3 startPos;
@@ -34,6 +39,7 @@ public class CameraMover : MonoBehaviour
     void Start()
     {
         propThrough = 0f;
+        lastShakeOffset = new Vector3(0f, 0f, 0f);
 
         transitionQueue = new List<CameraTransitionData>();
         currentIndex = startingIndex;
@@ -42,6 +48,7 @@ public class CameraMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position -= lastShakeOffset;
         if (transitionQueue.Count > 0)
         {
             propThrough = Mathf.Min(1f, propThrough + propStepRate * Time.deltaTime);
@@ -66,6 +73,16 @@ public class CameraMover : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, minFloatY, transform.position.z);
             floatDir *= -1;
+        }
+        if (shakeEnabled)
+        {
+            Vector3 shakeOffset = new Vector3(0f, Random.Range(-1f, 1f), 0f) * maxShakeDistance * shakeStrength;
+            transform.position += shakeOffset;
+            lastShakeOffset = shakeOffset;
+        }
+        else
+        {
+            lastShakeOffset = new Vector3(0f, 0f, 0f);
         }
     }
 
@@ -107,6 +124,16 @@ public class CameraMover : MonoBehaviour
     public void StopFloating()
     {
         floatDir = 0f;
+    }
+
+    public void SetShakeStrength(float _shakeStrength)
+    {
+        shakeStrength = _shakeStrength;
+    }
+
+    public void SetShakeEnabled(bool _shakeEnabled)
+    {
+        shakeEnabled = _shakeEnabled;
     }
 
     public void StartFloating()
