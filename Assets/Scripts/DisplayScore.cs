@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class DisplayScore : MonoBehaviour
 {
+    [SerializeField] string prefix = "";
+    [SerializeField] string suffix = "";
+
     Text text;
 
     // Start is called before the first frame update
@@ -16,6 +19,6 @@ public class DisplayScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = ScoreManager.GetScore().ToString();
+        text.text = prefix + ScoreManager.GetScore().ToString() + suffix;
     }
 }
