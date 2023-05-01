@@ -5,7 +5,7 @@ using UnityEngine;
 public class Poop : MonoBehaviour {
 
     private (Vector3 start, Vector3 end)[] lines = new (Vector3 start, Vector3 end)[] {
-        (new Vector3(-1.5f,-5.7f,0f), new Vector3(-2.8f,-18.8f,0f)),
+        //(new Vector3(-1.5f,-5.7f,0f), new Vector3(-2.8f,-18.8f,0f)),
         (new Vector3(-2.8f,-18.8f,0f), new Vector3(2.6f,-11.5f,0f)),
         (new Vector3(2.6f,-11.5f,0f), new Vector3(7.67f,-12.45f,0f)),
         (new Vector3(7.67f,-12.45f,0f), new Vector3(3.35f,-22.03f,0f))
