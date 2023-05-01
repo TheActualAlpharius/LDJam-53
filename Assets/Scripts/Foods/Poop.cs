@@ -6,7 +6,12 @@ public class Poop : MonoBehaviour {
 
     [SerializeField] private List<GameObject> childPrefabs;
     [SerializeField] public float health;
+    public int numOfNutrients;
+    public float goodNutrientChance;
+    bool flag = true;
 
+    private void OnEnable(){
+    }
     public void emitNutirent(){
         
         GameObject child = ObjectPool.GetObject(childPrefabs[0]);
@@ -17,5 +22,12 @@ public class Poop : MonoBehaviour {
             ObjectPool.ReleaseToPool(gameObject);
         }
         
+    }
+
+    private void Update(){
+        if (transform.position.y > 15){
+            ObjectPool.ReleaseToPool(gameObject);
+            //add or subtract score depending on whether good or bad food
+        }
     }
 }

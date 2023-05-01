@@ -7,14 +7,14 @@ public class SpawnFood : MonoBehaviour
 {
     private float totalTime = 0;
     [SerializeField] private GameObject foodPrefab;
-    [SerializeField] private float spawnRate = 10f;
+    [SerializeField] private float spawnTime = 5f;
     private void Start(){
         ObjectPool.GetObject(foodPrefab);
 
     }
 
     private void Update(){
-        if (totalTime > spawnRate){
+        if (totalTime > spawnTime){
             ObjectPool.GetObject(foodPrefab);
             totalTime = 0;
         }
