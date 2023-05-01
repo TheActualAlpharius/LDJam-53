@@ -4364,10 +4364,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2043640293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c324ff307bf7fb43aaf611784f4bec5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b59e60d38bd7724f961482e9b15caf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterDrag: 10
+  forceToApply: {x: 0, y: 20}
+  maxSpeed: 6
 --- !u!1 &2076390791
 GameObject:
   m_ObjectHideFlags: 0
