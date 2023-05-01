@@ -8,7 +8,7 @@ public class Poop : MonoBehaviour {
         (new Vector3(-1.5f,-5.7f,0f), new Vector3(-2.8f,-18.8f,0f)),
         (new Vector3(-2.8f,-18.8f,0f), new Vector3(2.6f,-11.5f,0f)),
         (new Vector3(2.6f,-11.5f,0f), new Vector3(7.67f,-12.45f,0f)),
-        (new Vector3(7.67f,-12.45f,0f), new Vector3(3.35f,22.03f,0f))
+        (new Vector3(7.67f,-12.45f,0f), new Vector3(3.35f,-22.03f,0f))
     };
 
 
@@ -17,11 +17,16 @@ public class Poop : MonoBehaviour {
     [SerializeField] public GameObject nutrientPrefab;
     private float distanceTraveled = 0;
     [SerializeField] public float goodNutrientChance;
+    public SpriteRenderer renderer;
+    private Color32 startColor = new Color32(0xf2, 0xc7, 0x6a, 0xFF);
+    private Color32 endColor = new Color32(0xad, 0x25, 0x00, 0xFF);
     bool flag = true;
     float totalDistance;
 
     private void OnEnable(){
+        renderer = GetComponentInChildren<SpriteRenderer>();
         totalDistance = 0;
+        renderer.color = startColor;
         for(int i = 0; i < lines.Length; i++){
             totalDistance += Vector3.Distance(lines[i].start, lines[i].end);
         }
@@ -29,9 +34,9 @@ public class Poop : MonoBehaviour {
             Debug.Log("Added birth point");
             birthPoints.Add(totalDistance*i/numOfNutrients);
         }
+        Debug.Log(totalDistance);
     }
     public void emitNutirent(){
-        Debug.Log("IM GONNA SPAAAAWWWWWWNNNNNNN!");
         GameObject child = ObjectPool.GetObject(nutrientPrefab);
         birthPoints.RemoveAt(0);
         Nutrient nut = child.GetComponent<Nutrient>();
@@ -49,8 +54,9 @@ public class Poop : MonoBehaviour {
             //add or subtract score depending on whether good or bad food
         }
         float distanceTravelled = percentTravelled();
+        Debug.Log(distanceTravelled);
+        renderer.color = Color.Lerp(startColor, endColor, distanceTravelled);
         if(distanceTraveled > birthPoints[0]){
-            Debug.Log("emitting!!!!!!!");
             emitNutirent();
         }
 
