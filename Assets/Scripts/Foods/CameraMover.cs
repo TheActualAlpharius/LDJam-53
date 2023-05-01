@@ -11,7 +11,7 @@ public class CameraMover : MonoBehaviour
     [SerializeField] float floatSpeed;
     [SerializeField] float maxFloatY;
     [SerializeField] float minFloatY;
-
+    public AudioSource audioSourceClick;
     struct CameraTransitionData
     {
         public Vector3 startPos;
@@ -74,6 +74,7 @@ public class CameraMover : MonoBehaviour
         Vector3 startPos;
         if (transitionQueue.Count > 0)
         {
+            audioSourceClick.Play();
             startPos = transitionQueue[transitionQueue.Count - 1].endPos;
         }
         else

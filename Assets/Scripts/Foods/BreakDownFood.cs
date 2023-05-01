@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BreakDownFood : MonoBehaviour
 {
+    private AudioSource audioSource;
+    private void Start(){
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Food food = collision.gameObject.GetComponent<Food>();
@@ -11,6 +15,7 @@ public class BreakDownFood : MonoBehaviour
         if (food != null)
         {
             food.isDigesting = true;
+            audioSource.Play();
         }
     }
 
