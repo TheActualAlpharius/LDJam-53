@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: -8852267684994848858}
   - component: {fileID: -1166165295108446691}
   - component: {fileID: 5828116247963869023}
+  - component: {fileID: 3805020678063608443}
   m_Layer: 0
   m_Name: Nutrient
   m_TagString: Untagged
@@ -136,8 +137,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGood: 0
   analysisTime: 3
-  childPrefab: {fileID: 4422411532811009396, guid: 22e7e3497eba164458d36445a18cc5ef, type: 3}
-  isDissolving: 0
+  badPrefab: {fileID: 4422411532811009396, guid: f306774af8457754e9af2d35b9d06f63, type: 3}
+  goodPrefab: {fileID: 4422411532811009396, guid: 22e7e3497eba164458d36445a18cc5ef, type: 3}
+  healthChangeSize: 1
+  isAnalysing: 0
 --- !u!114 &-4373308301875766049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ba291e8d6ab404e9cadc31c3098843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beingDragged: 0
   _speed: 20
   maxSpeed: 20
 --- !u!114 &-4207822685875493469
@@ -214,3 +218,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &3805020678063608443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8601326024802477363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e7cbc5ef231d847aeb7b8b238bb744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChange: 0

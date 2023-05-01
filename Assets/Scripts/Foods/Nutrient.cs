@@ -7,7 +7,23 @@ public class Nutrient : MonoBehaviour {
     [SerializeField] public float analysisTime = 3f;
     [SerializeField] private GameObject badPrefab;
     [SerializeField] private GameObject goodPrefab;
+    [SerializeField] private float healthChangeSize;
     public bool isAnalysing = false;
+
+    private void Start()
+    {
+        float healthChange;
+        if (isGood)
+        {
+            healthChange = healthChangeSize;
+        }
+        else
+        {
+            healthChange = -healthChangeSize;
+        }
+        GetComponent<Consumable>().healthChange = healthChange;
+
+    }
 
     public void Update(){
         if(isAnalysing){
