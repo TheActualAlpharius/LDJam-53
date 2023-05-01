@@ -160,8 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ba291e8d6ab404e9cadc31c3098843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
-  maxSpeed: 10
+  _speed: 20
+  maxSpeed: 20
 --- !u!50 &3621310361625489405
 Rigidbody2D:
   serializedVersion: 4
@@ -176,7 +176,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 2
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -227,11 +227,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 75fb7e9430d05e74ea37bd3748d3f49d, type: 3}
   - {fileID: 21300000, guid: a5af35c17cb247642ab74808642d4cbc, type: 3}
   - {fileID: 21300000, guid: 6b86f084ed5250e478ff2a19f3dbfdb3, type: 3}
-  nonFoodSprites:
-  - {fileID: 21300000, guid: 6b86f084ed5250e478ff2a19f3dbfdb3, type: 3}
-  - {fileID: 21300000, guid: 75fb7e9430d05e74ea37bd3748d3f49d, type: 3}
   digestionTime: 3
   childPrefabs:
   - {fileID: 158850401245806738, guid: c298dc04026c5844a99ab1566cd3272c, type: 3}
   isDigesting: 0
   notFood: 0
+  hasEnteredStomach: 0
