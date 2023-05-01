@@ -17,6 +17,7 @@ public class FlowingWater : MonoBehaviour
         noFilter.NoFilter();
     }
 
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         FloatOnWater floatOnWater = collision.gameObject.GetComponent<FloatOnWater>();
