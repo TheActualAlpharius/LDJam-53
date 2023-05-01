@@ -4118,7 +4118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5925fcdc07cf6e49baae0af987394da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxObjects: 5
+  maxObjects: 20
   currentObjects: 0
 --- !u!61 &1028425600
 BoxCollider2D:
@@ -5396,7 +5396,8 @@ MonoBehaviour:
   maxFloatY: 33
   minFloatY: -15.53
   shakeStrength: 0
-  maxShakeDistance: 1
+  maxShakeDistance: 0.1
+  shakeEnabled: 0
   audioSourceClick: {fileID: 1387172105}
 --- !u!81 &1387172101
 AudioListener:
