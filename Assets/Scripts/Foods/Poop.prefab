@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1973434632265492752}
   - component: {fileID: -7647290461476699998}
-  - component: {fileID: -466186931606845599}
   - component: {fileID: 6474061482140941829}
   - component: {fileID: 2602376868203505655}
   - component: {fileID: 6063133782533309663}
+  - component: {fileID: 6595403428236543164}
   m_Layer: 0
   m_Name: Poop
   m_TagString: Untagged
@@ -51,28 +51,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 50
   maxSpeed: 10
---- !u!114 &-466186931606845599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158850401245806738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7cc854d31f93754e88088ffadbbfc76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  childPrefabs:
-  - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
-  - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
-  - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
-  - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
-  - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
-  - {fileID: 8601326024802477363, guid: 08eb4c34fb303144f8b349981ca6d2aa, type: 3}
-  health: 0
-  numOfNutrients: 0
-  goodNutrientChance: 0
 --- !u!50 &6474061482140941829
 Rigidbody2D:
   serializedVersion: 4
@@ -133,6 +111,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolID: Poop
+--- !u!114 &6595403428236543164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158850401245806738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cc854d31f93754e88088ffadbbfc76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childPrefabs: []
+  health: 2.24
+  numOfNutrients: 5
+  goodNutrientChance: 0
 --- !u!1 &1699799287279956055
 GameObject:
   m_ObjectHideFlags: 0
