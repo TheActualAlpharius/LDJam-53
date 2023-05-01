@@ -148,4 +148,9 @@ public class CameraMover : MonoBehaviour
             floatDir = -1f;
         }
     }
+
+    public int GetCurrentIndex()
+    {
+        return currentIndex;
+    }
 }
