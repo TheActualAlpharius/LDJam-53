@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Drag : MonoBehaviour
 {
+    public bool beingDragged;
 
     private Vector3 offset = Vector3.zero;
     private Camera _cam;
@@ -16,8 +17,17 @@ public class Drag : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        if (beingDragged && !Input.GetMouseButton(0))
+        {
+            beingDragged = false;
+        }
+    }
+
     private void OnMouseDown(){
         offset = _cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        beingDragged = true;
     }
 
     private void OnMouseDrag(){
