@@ -6,7 +6,7 @@ public class HealthManager : Singleton<HealthManager>
 {
     [SerializeField] float maxHealth;
 
-    private float health;
+    [SerializeField] float health;
 
     public override void InitSingleton()
     {
@@ -20,7 +20,11 @@ public class HealthManager : Singleton<HealthManager>
 
     public static void ChangeHealth(float _diff)
     {
-        instance.health += _diff;
+        instance.health = Mathf.Max(0f, instance.health + _diff);
+        if (instance.health <= 0f)
+        {
+            GameModeManager.SetMode("MenuMode");
+        }
     }
 
     public static void ResetHealth()

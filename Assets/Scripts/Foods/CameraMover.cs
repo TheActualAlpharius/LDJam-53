@@ -83,4 +83,9 @@ public class CameraMover : MonoBehaviour
     {
         return 0.5f * (Mathf.Sin(Mathf.PI * (_prop - 0.5f)) + 1f);
     }
+
+    public void ResetCamera()
+    {
+        MoveTo(cameraPositions[startingIndex]);
+    }
 }

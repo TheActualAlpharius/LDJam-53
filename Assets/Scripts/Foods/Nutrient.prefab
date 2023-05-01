@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: -1166165295108446691}
   - component: {fileID: 5828116247963869023}
   - component: {fileID: 3805020678063608443}
+  - component: {fileID: 5898753987252469847}
   m_Layer: 0
   m_Name: Nutrient
   m_TagString: Untagged
@@ -231,3 +232,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChange: 0
+--- !u!114 &5898753987252469847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8601326024802477363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec609e2d1327ec447b2979f28dac7a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: MainGameMode
