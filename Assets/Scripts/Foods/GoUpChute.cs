@@ -17,9 +17,7 @@ public class GoUpChute : MonoBehaviour
         if (food != null){
             if (food.hasEnteredStomach){
                 //shoot the food up
-                Debug.Log("d");
                 otherRigidbody.velocity = new Vector3(otherRigidbody.velocity.x, 30f);
-                Debug.Log(otherRigidbody.velocity);
                 //otherRigidbody.AddForce(new Vector3(0, 30f));
 
             }
@@ -39,7 +37,6 @@ public class GoUpChute : MonoBehaviour
             {
                 //shoot the food up
                 otherRigidbody.velocity = new Vector3(otherRigidbody.velocity.x, 30f);
-                Debug.Log(otherRigidbody.velocity);
                 //otherRigidbody.AddForce(new Vector3(0, 30f));
 
             }
@@ -48,7 +45,6 @@ public class GoUpChute : MonoBehaviour
         }
     }
     private void OnTriggerExit2D(Collider2D other){
-        Debug.Log("exit");
         Food food = other.gameObject.GetComponent<Food>();
         if (food != null){
             if (!food.hasEnteredStomach)
