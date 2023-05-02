@@ -55,7 +55,7 @@ public class Poop : MonoBehaviour {
         }
         float distanceTravelled = percentTravelled();
         renderer.color = Color.Lerp(startColor, endColor, distanceTravelled);
-        if(distanceTraveled > birthPoints[0]){
+        if(birthPoints.Count > 0 && distanceTraveled > birthPoints[0]){
             emitNutirent();
         }
 
