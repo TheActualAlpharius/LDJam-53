@@ -22,6 +22,7 @@ public class MainGameMode : BaseMode
 
         cameraMover.ResetCamera();
 
+        Food.guaranteeFood = true;
         HealthManager.ResetHealth();
         ScoreManager.ResetScore();
         cameraMover.SetShakeEnabled(true);

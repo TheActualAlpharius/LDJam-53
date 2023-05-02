@@ -15,7 +15,7 @@ public class Food : MonoBehaviour
     private float goodNutrientChance;
     private int numOfPoop;
     public bool hasEnteredStomach = false;
-    public bool guaranteeFood;
+    public static bool guaranteeFood = true;
 
     private Dictionary<string, float[]> nutrientInfo = new Dictionary<string, float[]>(){
         {"burger", new float[] {4f, 0.8f, 3f}},
@@ -29,11 +29,12 @@ public class Food : MonoBehaviour
     private void OnEnable(){
         transform.position = new Vector3(7.5f, 42f);
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        Debug.Log(guaranteeFood);
         int randomIndex = Random.Range(0, foodSprites.Length);
-        if (randomIndex > 2 & guaranteeFood == true){
+        if (randomIndex > 2 && guaranteeFood){
             randomIndex -= 3;
-            guaranteeFood = false;
         }
+        guaranteeFood = false;
         spriteRenderer.sprite = foodSprites[randomIndex];
         
         numOfNutrients = (int)nutrientInfo[spriteRenderer.sprite.name][0];

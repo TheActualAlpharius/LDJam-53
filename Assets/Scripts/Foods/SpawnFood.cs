@@ -11,22 +11,17 @@ public class SpawnFood : MonoBehaviour
     [SerializeField] private float minSpawnTime;
     [SerializeField] private float roundTimeForMinSpawnTime;
 
-    private bool firstFood;
-
     private float startTime; //time when spawning began
     private void OnEnable(){
         startTime = Time.time;
 
         timeSinceLastSpawn = maxSpawnTime;
 
-        firstFood = true;
     }
 
     private void Update(){
         if (timeSinceLastSpawn > GetCurrentSpawnTime()){
-            GameObject newFood = ObjectPool.GetObject(foodPrefab);
-            newFood.GetComponent<Food>().guaranteeFood = firstFood;
-            firstFood = false;
+            ObjectPool.GetObject(foodPrefab);
             timeSinceLastSpawn = 0;
         }
         timeSinceLastSpawn += Time.deltaTime;
