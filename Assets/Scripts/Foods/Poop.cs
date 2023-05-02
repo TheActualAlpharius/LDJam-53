@@ -33,7 +33,7 @@ public class Poop : MonoBehaviour {
         }
         birthPoints = new List<float>();
         birthPoints.Add(5f/6f * totalDistance);
-        birthPoints.Add(totalDistance);
+        // we only had one birthPoint due to a bug, but then it was actually more balanced so just hardcoding this for now
         /*
         for(int i = 5; i <= numOfNutrients + 1; i++){
             birthPoints.Add(totalDistance*i/(numOfNutrients+1));
@@ -43,16 +43,13 @@ public class Poop : MonoBehaviour {
         GameObject child = ObjectPool.GetObject(nutrientPrefab);
         birthPoints.RemoveAt(0);
         Nutrient nut = child.GetComponent<Nutrient>();
-        nut.isGood = Random.value > goodNutrientChance;
+        nut.isGood = Random.value < goodNutrientChance;
         nut.transform.position = new Vector3(-7.8f,-18.3f,0) + new Vector3(Random.Range(0.1f, 0.3f), Random.Range(0.1f, 0.3f), 0);
-        if(birthPoints.Count == 0){
-            ObjectPool.ReleaseToPool(gameObject);
-        }
         
     }
 
     private void Update(){
-        if (transform.position.y < -25 || transform.position.y > 15){
+        if (transform.position.y < -25 || transform.position.y > 15){ // exited the screen, delete it
             ObjectPool.ReleaseToPool(gameObject);
             //add or subtract score depending on whether good or bad food
         }

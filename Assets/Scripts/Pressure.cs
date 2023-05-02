@@ -40,7 +40,7 @@ public class Pressure : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Poop>())
         {
-            currentObjects--;
+            currentObjects = Mathf.Max(0, currentObjects - 1);
             cameraMover.SetShakeStrength(ScalePressure(GetPressure()));
         }
     }

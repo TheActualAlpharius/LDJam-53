@@ -73,7 +73,10 @@ public class ObjectPool : Singleton<ObjectPool>
     public static void AddToPool(GameObject _object)
     {
         List<GameObject> affectedPool = GetPoolForObject(_object);
-        affectedPool.Add(_object);
+        if (!affectedPool.Contains(_object))
+        {
+            affectedPool.Add(_object);
+        }
     }
 
 
