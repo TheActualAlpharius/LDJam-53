@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MainGameMode : BaseMode
 {
-    private static float minHealthLossRate = 0.07f;
-    private static float maxHealthLossRate = 0.14f;
-    private static float timeToMaxHealthLossRate = 120f;
+    private static float minHealthLossRate = 0.074f;
+    private static float maxHealthLossRate = 0.148f;
+    private static float timeToMaxHealthLossRate = 180f;
     private float startTime;
 
     private CameraMover cameraMover;

@@ -6102,7 +6102,7 @@ MonoBehaviour:
   foodPrefab: {fileID: 3621310361625489393, guid: dc69c0a50df7b974aa369436e4cac0ef, type: 3}
   maxSpawnTime: 10
   minSpawnTime: 5
-  roundTimeForMinSpawnTime: 240
+  roundTimeForMinSpawnTime: 180
 --- !u!4 &1078531912
 Transform:
   m_ObjectHideFlags: 0
@@ -7844,7 +7844,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 95902459fb23d1b4f8322314d1aeaa16, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
