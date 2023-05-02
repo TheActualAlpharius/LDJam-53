@@ -48,18 +48,13 @@ public class GoUpChute : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other){
         Food food = other.gameObject.GetComponent<Food>();
         if (food != null){
+            if (food.transform.position.y > 30){
+                ObjectPool.ReleaseToPool(other.gameObject);
+            }
             if (!food.hasEnteredStomach)
             {
                 food.hasEnteredStomach = true;
-                if (food.transform.position.y > 30){
-                    ObjectPool.ReleaseToPool(other.gameObject);
-                }
-            } 
-            else
-            {
-                ObjectPool.ReleaseToPool(other.gameObject);
             }
         }
-
     }
 }
