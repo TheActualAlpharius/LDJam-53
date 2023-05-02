@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReleaseToPoolOnGameMode : MonoBehaviour
 {
-        [SerializeField] string mode;
+    [SerializeField] string mode;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class ReleaseToPoolOnGameMode : MonoBehaviour
 
     void OnModeChanged(BaseMode _newMode)
     {
-        if (_newMode.GetType().Name == mode)
+        if (_newMode.GetType().Name == mode && gameObject.activeSelf)
         {
             ObjectPool.ReleaseToPool(gameObject);
         }
