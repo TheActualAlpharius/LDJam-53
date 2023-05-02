@@ -21,4 +21,9 @@ public class DisplayScore : MonoBehaviour
     {
         text.text = prefix + ScoreManager.GetScore().ToString() + suffix;
     }
+
+    private void OnDisable()
+    {
+        text.text = "";
+    }
 }

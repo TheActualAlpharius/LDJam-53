@@ -765,7 +765,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25.000061, y: -25.000061}
+  m_AnchoredPosition: {x: 25, y: -25.000061}
   m_SizeDelta: {x: 450, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &144889589
@@ -1790,7 +1790,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 21.000061, y: -18.000061}
+  m_AnchoredPosition: {x: 21, y: -18.000061}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &294381756
@@ -2980,7 +2980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25.000061, y: -25.000061}
+  m_AnchoredPosition: {x: 25, y: -25.000061}
   m_SizeDelta: {x: 470, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &477130031
@@ -6100,9 +6100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 3621310361625489393, guid: dc69c0a50df7b974aa369436e4cac0ef, type: 3}
-  maxSpawnTime: 15
+  maxSpawnTime: 10
   minSpawnTime: 5
-  roundTimeForMinSpawnTime: 180
+  roundTimeForMinSpawnTime: 240
 --- !u!4 &1078531912
 Transform:
   m_ObjectHideFlags: 0
@@ -7031,7 +7031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25.000061, y: -25.000061}
+  m_AnchoredPosition: {x: 25, y: -25.000061}
   m_SizeDelta: {x: 575, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1275820326
@@ -7414,7 +7414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25.000061, y: -25.000061}
+  m_AnchoredPosition: {x: 25, y: -25.000061}
   m_SizeDelta: {x: 470, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1367971035
@@ -10521,7 +10521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25.000061, y: -25.000061}
+  m_AnchoredPosition: {x: 25, y: -25.000061}
   m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2047519125

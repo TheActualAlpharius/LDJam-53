@@ -15,7 +15,7 @@ public class Food : MonoBehaviour
     private float goodNutrientChance;
     private int numOfPoop;
     public bool hasEnteredStomach = false;
-    private static bool guaranteeFood = true;
+    public bool guaranteeFood;
 
     private Dictionary<string, float[]> nutrientInfo = new Dictionary<string, float[]>(){
         {"burger", new float[] {4f, 0.8f, 3f}},
