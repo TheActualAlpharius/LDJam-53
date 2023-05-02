@@ -19,6 +19,7 @@ public class GameModeManager : Singleton<GameModeManager>
         modes.Add("MenuMode", new MenuMode());
         modes.Add("MainGameMode", new MainGameMode());
         modes.Add("ScoreMode", new ScoreMode());
+        modes.Add("HowToPlayMode", new HowToPlayMode());
 
         onModeChanged = null;
 
