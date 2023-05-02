@@ -13,9 +13,9 @@ public class Poop : MonoBehaviour {
 
 
     [SerializeField] public int numOfNutrients;
-    private List<float> birthPoints = new List<float>();
+    [SerializeField] List<float> birthPoints = new List<float>();
     [SerializeField] public GameObject nutrientPrefab;
-    private float distanceTraveled = 0;
+    [SerializeField] float distanceTraveled = 0;
     [SerializeField] public float goodNutrientChance;
     public SpriteRenderer renderer;
     private Color32 startColor = new Color32(0xf2, 0xc7, 0x6a, 0xFF);
@@ -26,13 +26,18 @@ public class Poop : MonoBehaviour {
     private void OnEnable(){
         renderer = GetComponentInChildren<SpriteRenderer>();
         totalDistance = 0;
+        distanceTraveled = 0f;
         renderer.color = startColor;
         for(int i = 0; i < lines.Length; i++){
             totalDistance += Vector3.Distance(lines[i].start, lines[i].end);
         }
+        birthPoints = new List<float>();
+        birthPoints.Add(5f/6f * totalDistance);
+        birthPoints.Add(totalDistance);
+        /*
         for(int i = 5; i <= numOfNutrients + 1; i++){
             birthPoints.Add(totalDistance*i/(numOfNutrients+1));
-        }
+        }*/
     }
     public void emitNutirent(){
         GameObject child = ObjectPool.GetObject(nutrientPrefab);
@@ -47,7 +52,7 @@ public class Poop : MonoBehaviour {
     }
 
     private void Update(){
-        if (transform.position.y > 15){
+        if (transform.position.y < -25 || transform.position.y > 15){
             ObjectPool.ReleaseToPool(gameObject);
             //add or subtract score depending on whether good or bad food
         }
