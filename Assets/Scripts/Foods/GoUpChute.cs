@@ -55,5 +55,6 @@ public class GoUpChute : MonoBehaviour
             {
                 food.hasEnteredStomach = true;
             }
+        }
     }
 }
